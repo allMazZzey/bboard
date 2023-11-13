@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AdsController::class, 'index'])->name('index');
 Route::get('/{ad}', [AdsController::class, 'detail'])->name('detail');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
