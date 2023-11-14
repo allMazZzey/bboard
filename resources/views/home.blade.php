@@ -1,7 +1,7 @@
 @extends('layouts.base')
 @section('title', 'Мои объявления')
 @section('main')
-<p class="text-right"><a href="">Добавить объявление</a></p>
+<p class="text-right"><a href="{{ route('ad.showAddForm') }}">Добавить объявление</a></p>
 @if (count($ads) > 0)
 <table class="table table-striped">
     <thead>
@@ -19,10 +19,10 @@
             </td>
             <td>{{ $ad->price }}</td>
             <td>
-                <a href="">Изменить</a>
+                <a href="{{ route('ad.showEditForm', ['ad' => $ad->id])}}">Изменить</a>
             </td>
             <td>
-                <a href="">Удалить</a>
+                <a href="{{ route('ad.showDeleteForm', ['ad' => $ad->id])}}">Удалить</a>
             </td>
         </tr>
         @endforeach
